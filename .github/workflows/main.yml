@@ -1,0 +1,12 @@
+name: Discord
+on: push 
+
+jobs: 
+  write-to-discord:
+    runs-on: ubuntu-latest
+    steps:
+    - name: discord
+      uses: sebastianpopp/discord-action@releases/v2
+      with: 
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        message: Khalid has tested the connetction.
