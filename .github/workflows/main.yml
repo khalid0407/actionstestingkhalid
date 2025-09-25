@@ -1,13 +1,12 @@
-name: The first action
+name: Discord
+on: push 
 
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  react_on_push:
+jobs: 
+  write-to-discord:
     runs-on: ubuntu-latest
     steps:
-    - name: Hello world
-      run: echo hello world
-  
+    - name: discord
+      uses: sebastianpopp/discord-action@releases/v2
+      with: 
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        message: khaled has tested the connetction.
